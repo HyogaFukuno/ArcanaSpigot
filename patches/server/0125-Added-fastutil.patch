@@ -1,0 +1,21 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Hyoga Fukuno <hyouga.dev@gmail.com>
+Date: Thu, 4 Jun 2026 03:35:51 +0900
+Subject: [PATCH] Added fastutil
+
+
+diff --git a/build.gradle.kts b/build.gradle.kts
+index 54154ecffb9575e0227ec70e5072720de8333e67..b658b5549c92af5fb48df7124b99d67c1e292794 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -44,6 +44,10 @@ dependencies {
+     implementation("org.jline:jline-terminal-jni:3.30.9")
+     // PandaSpigot end
+ 
++    // ArcanaSpigot start
++    implementation("it.unimi.dsi:fastutil:8.5.18")
++    // ArcanaSpigot end
++
+     implementation("net.kyori:adventure-text-serializer-json:$adventureVersion") // PandaSpigot - Adventure
+ 
+     testImplementation("junit:junit:4.11")
