@@ -1,4 +1,4 @@
-rootProject.name = "pandaspigot"
+rootProject.name = "arcanaspigot"
 
 includeBuild("build-logic")
 
@@ -7,6 +7,6 @@ fun setupSubproject(name: String, dir: String) {
     project(":$name").projectDir = file(dir)
 }
 
-setupSubproject("pandaspigot-server", "PandaSpigot-Server")
+setupSubproject("arcanaspigot-server", "PandaSpigot-Server")
 setupSubproject("pandaspigot-api", "PandaSpigot-API")
 setupSubproject("paperclip", "paperclip")

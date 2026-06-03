@@ -1,0 +1,70 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Hyoga Fukuno <hyouga.dev@gmail.com>
+Date: Thu, 4 Jun 2026 03:25:36 +0900
+Subject: [PATCH] New Rebrand
+
+
+diff --git a/build.gradle.kts b/build.gradle.kts
+index e9df20a48afde91bc88c653be4db02a17d4c475b..54154ecffb9575e0227ec70e5072720de8333e67 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -115,7 +115,7 @@ tasks {
+             attributes(
+                 "Main-Class" to "org.bukkit.craftbukkit.Main",
+                 "Implementation-Title" to "CraftBukkit",
+-                "Implementation-Version" to "git-PandaSpigot-$implementationVersion",
++                "Implementation-Version" to "git-ArcanaSpigot-$implementationVersion", // ArcanaSpigot
+                 "Implementation-Vendor" to date,
+                 "Specification-Title" to "Bukkit",
+                 "Specification-Version" to project.version,
+diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
+index ae0259e025d1121adb5d09cda05e84fe711d8a35..2fe03d5482d99d4bbb1df62a07be02b252f180ae 100644
+--- a/src/main/java/net/minecraft/server/MinecraftServer.java
++++ b/src/main/java/net/minecraft/server/MinecraftServer.java
+@@ -1173,7 +1173,7 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
+     }
+ 
+     public String getServerModName() {
+-        return "PandaSpigot"; // PandaSpigot - PandaSpigot > // PaperSpigot - PaperSpigot > // Spigot - Spigot > // CraftBukkit - cb > vanilla!
++        return "ArcanaSpigot"; // ArcanaSpigot - ArcanaSpigot > // PandaSpigot - PandaSpigot > // PaperSpigot - PaperSpigot > // Spigot - Spigot > // CraftBukkit - cb > vanilla!
+     }
+ 
+     public CrashReport b(CrashReport crashreport) {
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+index 2eac381a825ed0edabd12816432f6d2d655887ef..091f6a0d5d9f8cfd284a537b9bd0adc654bda0f6 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+@@ -127,7 +127,7 @@ import net.md_5.bungee.api.chat.BaseComponent;
+ 
+ public final class CraftServer implements Server {
+     private static final Player[] EMPTY_PLAYER_ARRAY = new Player[0];
+-    private final String serverName = "PandaSpigot"; // PandaSpigot
++    private final String serverName = "ArcanaSpigot"; // ArcanaSpigot > // PandaSpigot
+     private final String serverVersion;
+     private final String bukkitVersion = Versioning.getBukkitVersion();
+     private final Logger logger = Logger.getLogger("Minecraft");
+diff --git a/src/main/java/org/spigotmc/WatchdogThread.java b/src/main/java/org/spigotmc/WatchdogThread.java
+index 879e29592d9f6c4be7bd5d5dfbf83be1eb732799..9fe6813eb3b39d5fc82980a1d14375cbf90a2c39 100644
+--- a/src/main/java/org/spigotmc/WatchdogThread.java
++++ b/src/main/java/org/spigotmc/WatchdogThread.java
+@@ -19,7 +19,7 @@ public class WatchdogThread extends Thread
+ 
+     private WatchdogThread(long timeoutTime, boolean restart)
+     {
+-        super( "PandaSpigot Watchdog Thread" ); // PandaSpigot
++        super( "ArcanaSpigot Watchdog Thread" ); // ArcanaSpigot > // PandaSpigot
+         this.timeoutTime = timeoutTime;
+         this.restart = restart;
+     }
+@@ -56,9 +56,9 @@ public class WatchdogThread extends Thread
+             {
+                 Logger log = Bukkit.getServer().getLogger();
+                 log.log( Level.SEVERE, "The server has stopped responding!" );
+-                log.log( Level.SEVERE, "Please report this in https://github.com/hpfxd/PandaSpigot/issues!" ); // PandaSpigot
++                log.log( Level.SEVERE, "Please report this in https://github.com/HyogaFukuno/ArcanaSpigot/issues!" ); // ArcanaSpigot > // PandaSpigot
+                 log.log( Level.SEVERE, "Be sure to include ALL relevant console errors and Minecraft crash reports" );
+-                log.log( Level.SEVERE, "PandaSpigot version: " + Bukkit.getServer().getVersion() ); // PandaSpigot
++                log.log( Level.SEVERE, "ArcanaSpigot version: " + Bukkit.getServer().getVersion() ); // ArcanaSpigot > // PandaSpigot
+                 //
+                 if(net.minecraft.server.World.haveWeSilencedAPhysicsCrash)
+                 {
